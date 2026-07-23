@@ -32,13 +32,18 @@ st.set_page_config(
 # LOAD DATA
 # -----------------------------
 
-@st.cache_data
-def load_data():
-    return pd.read_excel(
-        r"..\Code\Data\MASTER_DATASET_FINAL_v2.xlsx"
-    )
+# @st.cache_data
+# def load_data():
+#     return pd.read_excel(
+#         r"..\Code\Data\MASTER_DATASET_FINAL_v2.xlsx"
+#     )
 
-df = load_data()
+# df = load_data()
+from pathlib import Path
+
+DATA_FILE = Path("Data") / "MASTER_DATASET_FINAL_v2.xlsx"
+
+df = pd.read_excel(DATA_FILE)
 
 # -----------------------------
 # SIDEBAR
